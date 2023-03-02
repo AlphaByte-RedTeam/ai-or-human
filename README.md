@@ -15,3 +15,8 @@ Python AI image generated detector built using Streamlit and using Hugging Face 
 - [Feri Andika](https://github.com/your-feritale)
 - [Eric Wiyanto](https://github.com/wiyantoeric)
 - [Janice Claresta Lingga](https://github.com/janeclrst)
+
+## Our Process
+<p align="center">
+    <img src="/pictures/methodology.png" width="1080" alt="Application Methodology" />
+</p>
