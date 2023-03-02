@@ -1,5 +1,10 @@
 <h3 align="center">
-    <img src="/pictures/logo.png" width="1080" alt="Brand text mark">
+    <a href="https://github.com/AlphaByte-RedTeam/ai-or-human#light-mode-only" target="_blank">
+        <img src="/pictures/logoDark.png" width="1080" alt="Logo" />
+    </a>
+    <a href="https://github.com/AlphaByte-RedTeam/ai-or-human#dark-mode-only" target="_blank">
+        <img src="/pictures/logoLight.png" width="1080" alt="Logo" />
+    </a>
 </h3>
 
 # AI or Human
