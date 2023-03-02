@@ -1,4 +1,7 @@
-![Brain](./pictures/icons8-artificial-intelligence-512.png)
+<h3 align="center">
+    <img src="/public/logo.png" height="128" alt="Brand text mark">
+</h3>
+
 # AI or Human
 Python AI image generated detector built using Streamlit and using Hugging Face Model API
 
