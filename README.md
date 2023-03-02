@@ -19,4 +19,7 @@ Python AI image generated detector built using Streamlit and using Hugging Face 
 ## Our Process
 <p align="center">
     <img src="/pictures/methodology.png" width="1080" alt="Application Methodology" />
+    <br>
+    <br>
+    <img src="/pictures/process.png" width="1080" alt="Process" />
 </p>
