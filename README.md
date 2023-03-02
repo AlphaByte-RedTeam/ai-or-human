@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img src="/pictures/logo.png" height="128" alt="Brand text mark">
+    <img src="/pictures/logo.png" width="1080" alt="Brand text mark">
 </h3>
 
 # AI or Human
