@@ -1,3 +1,4 @@
+![Brain](./pictures/icons8-artificial-intelligence-512.png)
 # AI or Human
 Python AI image generated detector built using Streamlit and using Hugging Face Model API
 
