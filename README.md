@@ -1,7 +1,7 @@
 <h3 align="center">
-    <a href="https://github.com/AlphaByte-RedTeam/ai-or-human#light-mode-only" target="_blank">
+    <!-- <a href="https://github.com/AlphaByte-RedTeam/ai-or-human#light-mode-only" target="_blank">
         <img src="/pictures/logoDark.png" width="1080" alt="Logo" />
-    </a>
+    </a> -->
     <a href="https://github.com/AlphaByte-RedTeam/ai-or-human#dark-mode-only" target="_blank">
         <img src="/pictures/logoLight.png" width="1080" alt="Logo" />
     </a>
