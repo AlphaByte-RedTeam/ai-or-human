@@ -3,7 +3,6 @@ import requests
 import time
 
 API_URL = "https://api-inference.huggingface.co/models/NehaBardeDUKE/autotrain-ai-generated-image-classification-3250490787"
-BEARER_TOKEN = st.secrets["HUGGING_FACE"]
 headers = {f"Authorization": "Bearer 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"}
 
 
