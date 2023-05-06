@@ -1,9 +1,16 @@
 import time
+import boto3
 import requests
 import streamlit as st
 
 API_URL = "https://api-inference.huggingface.co/models/NehaBardeDUKE/autotrain-ai-generated-image-classification-3250490787"
 headers = {f"Authorization": "Bearer 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"}
+
+# Using Amazon S3
+s3 = boto3.resource("s3")
+s3_client = boto3.client("s3")
+bucket_name = "ai-or-human-bucket"
+default_region = "ap-southeast-1"
 
 
 def query(filename):
@@ -44,6 +51,18 @@ uploaded_file = st.file_uploader("Choose a file", type=["png", "jpg", "jpeg"])
 
 # Display the uploaded image
 if uploaded_file is not None:
+    # Upload the image to AWS S3
+    s3.Bucket(bucket_name).put_object(Key=uploaded_file.name, Body=uploaded_file)
+
+    # Construct the AWS S3 URL
+    bucket_url = (
+        f"https://{bucket_name}.s3.{default_region}.amazonaws.com/{uploaded_file.name}"
+    )
+
+    # Fetch the image from AWS S3
+    img = s3_client.get_object(Bucket=bucket_name, Key=uploaded_file.name)
+    st.write(img)
+
     st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
 
     # Query the API and store the response
