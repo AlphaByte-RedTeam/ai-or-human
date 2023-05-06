@@ -1,5 +1,7 @@
+import cv2
 import time
 import requests
+import numpy as np
 import streamlit as st
 
 API_URL = "https://api-inference.huggingface.co/models/NehaBardeDUKE/autotrain-ai-generated-image-classification-3250490787"
@@ -17,8 +19,9 @@ def query(filename):
     there is a timeout or connection error during the request, the function will return an error message
     instead.
     """
-    with open(filename, "rb") as file:
-        payload = file.read()
+    _, buffer = cv2.imencode(".jpg", filename)
+    payload = buffer.tobytes()
+    
     try:
         res = requests.post(API_URL, headers=headers, data=payload, timeout=5)
         st.success("Classification successful!", icon="✅")
@@ -44,10 +47,16 @@ uploaded_file = st.file_uploader("Choose a file", type=["png", "jpg", "jpeg"])
 
 # Display the uploaded image
 if uploaded_file is not None:
-    st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
+    # Convert file to  an opencv image
+    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
+    opencv_img = cv2.imdecode(file_bytes, 1)
+
+    st.image(
+        opencv_img, caption="Uploaded Image.", use_column_width=True, channels="BGR"
+    )
 
     # Query the API and store the response
-    response = query(uploaded_file.name)
+    response = query(opencv_img)
 
     time.sleep(1)
 
