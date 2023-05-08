@@ -21,9 +21,9 @@ def query(filename):
     """
     _, buffer = cv2.imencode(".jpg", filename)
     payload = buffer.tobytes()
-    
+
     try:
-        res = requests.post(API_URL, headers=headers, data=payload, timeout=5)
+        res = requests.post(API_URL, headers=headers, data=payload, timeout=60)
         st.success("Classification successful!", icon="✅")
     except requests.Timeout:
         st.error("Timeout error. Please try again.", icon="❌")
